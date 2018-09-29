@@ -1,0 +1,56 @@
+#include<stdio.h>
+void polygon()
+{
+    int n;
+    scanf("%d",&n);
+    int i,flag=0,a[n];
+    for(i=0;i<n;i++)
+    {
+        
+        scanf("%d",&a[i]);
+    }
+    if(n%2==0) 
+    {
+        flag++;
+        for(i=0;i<n-2;i++)
+        {
+            
+            if(a[i]==a[i+2] || a[i]==-1 || a[i+2]==-1)
+            {
+                flag++;
+                if(a[i]==-1) {a[i]==a[i+2];}
+                if(a[i+2]==-1){ a[i+2]==a[i];}
+
+            }
+        }
+        
+    }
+    if(flag!=(n-1)) printf(" \n NO \n");
+    else 
+    {
+        printf("YES \n");
+        for(i=0;i<n;i++)
+        {
+            printf("%d",a[i]);
+            
+        }
+        
+        
+    }
+}
+
+
+int main()
+{
+    int t,i;
+    scanf("%d",&t);
+    for(i=0;i<t;i++)
+    {
+        polygon();
+        
+    }
+    return 0;
+}
+    
+    
+    
